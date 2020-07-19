@@ -1,10 +1,30 @@
-<div  th:fragment="menu" class="pos-f-t">
+<div th:fragment="menu" class="pos-f-t">
 	<nav class="navbar navbar-dark bg-dark">
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		<button class="navbar-toggler" type="button" onclick="openNav()"
 			data-target="#navbarToggleExternalContent"
 			aria-controls="navbarToggleExternalContent" aria-expanded="false"
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+
+		<!-- The overlay -->
+		<div id="myNav" class="overlay">
+		<!-- Overlay content -->
+			<div class="container pt-5 pb-5">
+				<h1 class="align-middle text-center w-100">Menu</h1>
+			</div>
+			<div class="overlay-content">
+				<a>Subtitle viewer</a>
+				<a>Subtitle shifter</a>
+				<a>Subtitle editor</a>
+				<a>Subtitle creator</a>
+			</div>
+
+			<!-- Button to close the overlay navigation -->
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+			
+
+		</div>
 	</nav>
 </div>
