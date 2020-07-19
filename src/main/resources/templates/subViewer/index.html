@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+
+<title>Hello, world!</title>
+</head>
+<body>
+	<header th:insert="fragments/header.html :: header">
+	</header>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script th:src="@{/bootstrap/jquery-3.4.1.slim.min.js}"></script>
+	<script th:src="@{/bootstrap/popper.min.js}"></script>
+	<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+</body>
+</html>
