@@ -14,56 +14,8 @@
 </head>
 <body>
 	<header th:insert="fragments/header.html :: header"> </header>
-	<main class="container">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			Aliquam nec convallis lacus. Lorem ipsum dolor sit amet, consectetur
-			adipiscing elit. Morbi sit amet blandit nibh, in fermentum dolor.
-			Mauris nec ultrices nibh. Fusce scelerisque sagittis venenatis.
-			Integer imperdiet porttitor ipsum, eu convallis neque placerat quis.
-			Sed aliquam at nunc a elementum. Aenean molestie ultricies
-			ullamcorper. Fusce imperdiet felis sed ante auctor feugiat. Curabitur
-			id est blandit, tincidunt nibh vitae, convallis tortor. In blandit mi
-			volutpat purus laoreet, sit amet condimentum quam laoreet. Sed non
-			lacinia quam. Phasellus in nisi sed sem tincidunt blandit. Proin id
-			justo eget lorem semper dictum a et nunc. Duis vestibulum turpis nec
-			feugiat consequat. Nunc placerat elementum sapien eu dapibus.
-			Vestibulum pellentesque metus ullamcorper tortor ornare, sit amet
-			imperdiet dolor pulvinar. Nullam pulvinar mauris orci, eget
-			pellentesque lacus faucibus accumsan. Praesent scelerisque sapien in
-			ex pellentesque rhoncus. Nulla facilisi. Aliquam feugiat eu lorem sed
-			ornare. Vivamus venenatis mauris non ex porttitor porttitor. Praesent
-			sollicitudin diam id commodo tincidunt. Ut ac ligula egestas, cursus
-			mi eu, dictum arcu. Integer finibus ante a magna finibus, vitae
-			feugiat erat lobortis. Etiam et suscipit lorem, et euismod neque.
-			Quisque elementum risus ac neque aliquam maximus. Praesent pulvinar
-			ipsum metus, aliquet facilisis est faucibus non. Aenean eu dolor
-			pellentesque, laoreet lectus ac, congue erat. Cras eget orci interdum
-			augue hendrerit varius. Nunc semper est tortor, sed sodales lacus
-			gravida et. Curabitur magna augue, vulputate at purus non,
-			scelerisque imperdiet diam. Vestibulum dolor dui, ornare sit amet
-			tellus ac, semper sollicitudin ante. Proin posuere neque eu
-			ullamcorper faucibus. Suspendisse potenti. Nunc gravida diam nec odio
-			vestibulum, a lobortis elit dictum. Lorem ipsum dolor sit amet,
-			consectetur adipiscing elit. Mauris dignissim, dui non congue
-			ullamcorper, ante urna congue felis, vitae maximus erat purus sit
-			amet turpis. Aliquam erat volutpat. Suspendisse pharetra porta magna
-			eget ultrices. Aliquam sit amet quam sit amet sapien malesuada
-			venenatis. Nulla facilisi. Fusce venenatis quam a lorem euismod
-			consectetur. Nulla semper, lacus id laoreet posuere, diam dui aliquam
-			tellus, sed rutrum velit mauris eu nunc. Proin eu tincidunt diam.
-			Aenean id tortor ut tortor maximus maximus. Pellentesque vitae
-			commodo ipsum. Aliquam accumsan erat eget metus varius, non lobortis
-			metus luctus. Morbi lobortis accumsan nisl. Sed iaculis nibh tortor,
-			sed congue neque dignissim vitae. Cras facilisis at nunc non
-			ultricies. Nam dictum, nisl vitae cursus venenatis, dolor mauris
-			tempor neque, at posuere eros enim euismod neque. Praesent vestibulum
-			gravida erat ac tristique. Vivamus ut consectetur justo. Curabitur
-			vel elit erat. Nunc sed lacus vel quam placerat posuere a at risus.
-			Sed vel tempor nisi, a pretium neque. In nibh orci, semper eget magna
-			sit amet, tincidunt condimentum eros. Curabitur condimentum sit amet
-			ante et ultricies. Phasellus fermentum leo nec dolor ullamcorper
-			vehicula. Aliquam eu facilisis felis.</p>
-	</main>
+	<main class="container"
+		th:insert="fragments/upload-file.html :: upload-file"></main>
 	<footer class="bg-dark" th:insert="fragments/footer.html :: footer"></footer>
 
 
@@ -73,5 +25,16 @@
 	<script th:src="@{/bootstrap/popper.min.js}"></script>
 	<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
 	<script th:src="@{/js/functions.js}"></script>
+
+	<script>
+		// Add the following code if you want the name of the file appear on select
+		$(".custom-file-input").on(
+				"change",
+				function() {
+					var fileName = $(this).val().split("\\").pop();
+					$(this).siblings(".custom-file-label").addClass("selected")
+							.html(fileName);
+				});
+	</script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<div th:fragment="upload-file">
+	<h1>Subtitle viewer</h1>
+	<hr>
+
+	<h2>Load subtitles file</h2>
+	<div th:if="${msg}"
+		class="alert alert-success alert-dismissible fade show" role="alert">
+		<h1>Info</h1>
+		<p th:text="${msg}">Your file has been loaded succesfully</p>
+
+		<button type="button" class="close" data-dismiss="alert"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	<form action="" th:object="${subFile}">
+		<div class="form-row">
+			<div class="col-md mb-3 mr-3 custom-file">
+				<input type="file" class="custom-file-input" id="customFile" required> 
+				<label class="custom-file-label" for="customFile">Choose a file</label>
+			</div>
+			<div class="col-md form-group p-0 mr-3">
+				<input type="submit" class="form-control" value="Load subtitles file">
+			</div>
+			<div class="col-md form-group p-0 mr-3">
+				<input type="reset" class="form-control" value="Clear subtitles file">
+			</div>
+		</div>
+
+
+	</form>
+</div>
