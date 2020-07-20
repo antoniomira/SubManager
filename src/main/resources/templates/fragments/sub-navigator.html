@@ -1,0 +1,28 @@
+<div th:fragment="sub-navigator">
+
+	<div th:insert="fragments/upload-file.html  :: upload-file"></div>
+
+	<h3>Subtitle list</h3>
+	<hr>
+
+	<div>
+		<div class="mb-2 overflow-auto rounded" style="height: 500px;">
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+			<div th:insert="fragments/sub-view.html  :: sub-view"></div>
+		</div>
+		<hr>
+		
+		<div class="btn-group mb-4 w-100" role="group"
+			aria-label="Back-next buttons">
+			<button type="button" class="btn btn-dark">Back</button>
+			<button type="button" class="btn btn-dark">Next</button>
+		</div>
+	</div>
+
+</div>

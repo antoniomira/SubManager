@@ -8,17 +8,33 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
-
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" />
 <title>SubManager - Start page</title>
 </head>
 <body>
-	<header th:insert="fragments/header.html :: header">
-	</header>
+	<header th:insert="fragments/header.html :: header"> </header>
+	<main class="container"
+		th:insert="fragments/sub-navigator.html :: sub-navigator"></main>
+	<footer class="bg-dark" th:insert="fragments/footer.html :: footer"></footer>
+
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script th:src="@{/bootstrap/jquery-3.4.1.slim.min.js}"></script>
 	<script th:src="@{/bootstrap/popper.min.js}"></script>
 	<script th:src="@{/bootstrap/bootstrap.min.js}"></script>
+	<script th:src="@{/js/functions.js}"></script>
+
+	<script>
+		// Add the following code if you want the name of the file appear on select
+		$(".custom-file-input").on(
+				"change",
+				function() {
+					var fileName = $(this).val().split("\\").pop();
+					$(this).siblings(".custom-file-label").addClass("selected")
+							.html(fileName);
+				});
+	</script>
 </body>
 </html>
